@@ -7,6 +7,7 @@ import {
   GithubOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import Section from "./components/section/Section";
 
 function App() {
   return (
@@ -47,25 +48,11 @@ function App() {
             Australia, with a passion for problem-solving and all things tech.
           </p>
         </div>
-        <div className="section" id="about-me">
-          <div className="section-title">
-            <div className="section-title-text">
-            <h2>About Me</h2>
-            </div>
-            <div className="horizontal-line"></div>
-          </div>
-        </div>
-        <div className="section" id="experience">
-          <h2>Experience</h2>
-        </div>
-        <div className="section" id="projects">
-          <h2>Projects</h2>
-          <h3>Software</h3>
-          <h3>Hardware</h3>
-        </div>
-        <div className="section" id="current-interests">
-          <h2>Current Interests</h2>
-        </div>
+        <Section title="About Me" children="" />
+        <Section title="Experience" children="" />
+        <Section title="Projects" children="" />
+        <Section title="Curent Interests" children="" />
+        <Section title="Contact" children="" />
       </div>
     </body>
   );
