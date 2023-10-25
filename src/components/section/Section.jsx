@@ -2,8 +2,8 @@ import "./Section.css";
 
 const Section = (props) => {
   return (
-    <div className="section" id="projects">
-      <div className="section-title">
+    <div className="section">
+      <div className="section-title" id={props.title}>
         <div className="section-title-text">
           <h2>{props.title}</h2>
         </div>

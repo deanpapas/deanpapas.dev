@@ -10,21 +10,22 @@
 
 .body {
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
   width: 100vw;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   scrollbar-color: var(--secondary-color) var(--primary-color);
 }
 
 .header {
-  width: 90vw;
+  width: 99vw;
   background-color: rgba(23, 28, 40, 0.85);
   position: fixed;
   z-index: 1;
-  padding-left: 80px;
 
-  margin-right: 80px;
+
 }
 
 .content {
@@ -110,14 +111,7 @@
   background-color: var(--tertiary-color);
 }
 
-
-/* Additional styles for side displays on wider screens (adjust the width as needed) */
-@media screen and (min-width: 768px) {
-  .side-display-left,
-  .side-display-right {
-    width: 40px; /* You can adjust this width or add other styles as needed for wider screens */
-  }
-}
+/* Mobile Styles */
 
 /* Hide side displays on narrow screens */
 @media screen and (max-width: 767px) {

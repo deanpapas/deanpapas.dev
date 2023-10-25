@@ -1,7 +1,7 @@
 import "./App.css";
 import NavMenu from "./components/navmenu/NavMenu";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   LinkedinOutlined,
   GithubOutlined,
@@ -10,11 +10,43 @@ import {
 import Section from "./components/section/Section";
 
 function App() {
+  const [currentSections, setCurrentSections] = useState(new Set());
+  const sectionTitles = document.querySelectorAll(".section-title");
+
+  useEffect(() => {
+    const scrollElement = document.getElementById("scrollID");
+    if (scrollElement) {
+      scrollElement.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (scrollElement) {
+        scrollElement.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  const handleScroll = () => {
+    for (let i = 0; i < sectionTitles.length; i++) {
+      if (isElementOnScreen(sectionTitles[i])) {
+        currentSections.add(sectionTitles[i].textContent);
+      } else {
+        currentSections.delete(sectionTitles[i].textContent);
+      }
+    }
+    console.log(currentSections);
+  };
+
+  const isElementOnScreen = (elem) => {
+    const rect = elem.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+  };
+
   return (
-    <body className="body">
+    <body className="body" id="scrollID">
       <header className="header">
         <div className="nav">
-          <NavMenu />
+          {/* <NavMenu currentSections={currentSections} /> */}
         </div>
       </header>
 
@@ -48,10 +80,10 @@ function App() {
             Australia, with a passion for problem-solving and all things tech.
           </p>
         </div>
+
         <Section title="About Me" children="" />
         <Section title="Experience" children="" />
         <Section title="Projects" children="" />
-        <Section title="Curent Interests" children="" />
         <Section title="Contact" children="" />
       </div>
     </body>

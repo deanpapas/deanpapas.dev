@@ -2,8 +2,18 @@
 import React from "react";
 import "./NavMenu.css";
 
+const NavMenu = (props) => {
 
-const NavMenu = () => {
+
+  console.log(props.currentSections); 
+  const currentSectionElements = props.currentSections.map((section) => {
+    return (
+      <div className="nav-menu__item">
+        <a href={"#" + section.title}>{section.title}</a>
+      </div>
+    );
+  });
+
   return (
     <div className="nav-menu">
       <div className="nav-menu__item">
