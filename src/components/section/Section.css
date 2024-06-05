@@ -27,13 +27,21 @@
   margin-top: 0;
 }
 
+.section h4 {
+  color: var(--tertiary-color);
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
 .section p {
   color: var(--text-color);
   font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 0;
-  max-width: 50rem;
+
 }
 
 .section-title {
@@ -45,11 +53,49 @@
 }
 
 .section-title-text {
-  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .horizontal-line {
   height: 1px;
   width: 100%;
   background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    height: auto;
+    width: 80vw;
+    padding-bottom: 10vh;
+  }
+
+  .section h1 {
+    font-size: 1.25rem;
+  }
+
+  .section h2 {
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .section h3 {
+    color: var(--tertiary-color);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+
 }
